@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+    Revenue by Population
+{% endblock %}
+
+{% block content %}
+    <form action = "http://127.0.0.1:8080/revenue_by_population_years" method = "post">
+        <p>{{ error_message }}</p>
+        <p>Start Year:</p>
+        <p><input type = "integer" name = "sy" /></p>
+        <p>End Year:</p>
+        <p><input type = "integer" name = "ey" /></p>
+        <p><input type = "submit" value = "submit" /></p>
+    </form>
+{% endblock %}

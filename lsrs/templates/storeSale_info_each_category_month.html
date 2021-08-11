@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+    Store Sale info Each Category
+{% endblock %}
+
+{% block content %}
+<form action = "http://127.0.0.1:8080/storeSale_info_each_category_month" method = "post">
+    <p>{{ error_message }}</p>
+    <p>Year:</p>
+    <p><input type = "integer" name = "year" /></p>
+    <p>Month:</p>
+    <p><input type = "integer" name = "month" /></p>
+    <p><input type = "submit" value = "submit" /></p>
+</form>
+{% endblock %}

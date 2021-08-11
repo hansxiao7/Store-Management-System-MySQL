@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+    Restraunt Impact Report
+{% endblock %}
+
+{% block content %}
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+              <th>Category</th>
+              <th>Store Type</th>
+              <th>Quantity Sold</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for report in reports %}
+            <tr>
+              <td>{{ report.Category }}</td>
+              <td>{{ report.Store_Type }}</td>
+              <td>{{ report.Quantity_Sold }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}
+

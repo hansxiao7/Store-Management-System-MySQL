@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+    Groundhog Day Outdoor Furniture Sale Report
+{% endblock %}
+
+{% block content %}
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+              <th>Year</th>
+              <th>Total Outdoor Furniture Sale</th>
+              <th>Daily Outdoor Furniture Sale</th>
+              <th>Groundhog Day Outdoor Furniture Sale</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for report in reports %}
+            <tr>
+              <td>{{ report.year }}</td>
+              <td>{{ report.total_sale }}</td>
+              <td>{{ report.daily_sale }}</td>
+              <td>{{ report.groundhog_sale }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+    Campaign Impact Report
+{% endblock %}
+
+{% block content %}
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Sold During Campaign</th>
+              <th>Sold Outside Campaign</th>
+              <th>Difference</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for report in reports %}
+            <tr>
+              <td>{{ report.Product_ID }}</td>
+              <td>{{ report.Product_Name }}</td>
+              <td>{{ report.Sold_During_Campaign }}</td>
+              <td>{{ report.Sold_Outside_Campaign }}</td>
+              <td>{{ report.Difference }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

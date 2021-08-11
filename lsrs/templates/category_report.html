@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+    Category Report
+{% endblock %}
+
+{% block content %}
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+              <th>Category Name</th>
+              <th>Total Quantity</th>
+              <th>Max Retail Price</th>
+              <th>Min Retail Price</th>
+              <th>Average Retail Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for report in reports %}
+            <tr>
+              <td>{{ report.category_name }}</td>
+              <td>{{ report.total_quantity }}</td>
+              <td>{{ report.max_retail_price }}</td>
+              <td>${{ report.min_retail_price }}</td>
+              <td>${{ report.average_retail_price }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

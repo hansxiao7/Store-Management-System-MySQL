@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+    <table class="table table-dark table-hover">
+        <thead>
+        <caption>Statistics</caption>
+            <tr>
+              <th></th>
+              <th>Total Count</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for report in reports %}
+            <tr>
+                <td>{{ report.name }}</td>
+                <td>{{ report.count }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

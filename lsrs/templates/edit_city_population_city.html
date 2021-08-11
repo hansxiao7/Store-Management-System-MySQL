@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+Edit_city_population
+{% endblock %}
+
+{% block content %}
+<form action = "http://127.0.0.1:8080/edit_city_population_city" method = "post">
+    <p>{{ error_message }}</p>
+    <p>City:</p>
+    <p><input type = "text" name = "City" /></p>
+    <p>State:</p>
+    <p><input type = "text" name = "State" /></p>
+    <p>Population:</p>
+    <p><input type = "integer" name = "Population" /></p>
+    <p><input type = "submit" value = "submit" /></p>
+</form>
+{% endblock %}

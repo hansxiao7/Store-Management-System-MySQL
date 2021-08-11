@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+    Store Revenue Page
+{% endblock %}
+
+{% block content %}
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select State
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {% for state in states %}
+            <a class="dropdown-item">{{ state.state }}</a>
+          {% endfor %}
+      </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script>
+        $('.dropdown-item').click(function () {
+            let msg = $(this).text();
+            $('#dropdownMenuButton').text(msg);
+            $.get("http://localhost:8080/store_revenue_data", { state: msg }, function (data) {
+                location.href = "http://localhost:8080/store_revenue_report?reports="+JSON.stringify(data)+"&state="+msg
+            })
+        })
+    </script>
+{% endblock %}

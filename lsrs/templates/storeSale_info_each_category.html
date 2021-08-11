@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+ Store Sale info Each Category
+{% endblock %}
+
+{% block content %}
+<table class="table table-dark table-hover">
+    <thead>
+    <tr>
+        <th>Category name</th>
+        <th>State</th>
+        <th>Number Of Unit</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for report in reports %}
+    <tr>
+        <td>{{ report.category_name }}</td>
+        <td>{{ report.state }}</td>
+        <td>{{ report.numberOfUnit }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

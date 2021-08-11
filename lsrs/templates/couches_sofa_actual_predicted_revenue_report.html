@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+    Couches Sofa Actual Predicted Revenue Report
+{% endblock %}
+
+{% block content %}
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Retail Price</th>
+                <th>Total Sale Number</th>
+                <th>Discount Sale Number</th>
+                <th>Retail Sale Number</th>
+                <th>Actual Revenue</th>
+                <th>Predicted Revenue</th>
+                <th>Difference</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for report in reports %}
+            <tr>
+              <td>{{ report.pid }}</td>
+              <td>{{ report.product_name }}</td>
+              <td>${{ report.retail_price }}</td>
+              <td>{{ report.total_sale_number }}</td>
+              <td>{{ report.discount_sale_number }}</td>
+              <td>{{ report.retail_sale_number }}</td>
+              <td>${{ report.actual_revenue }}</td>
+              <td>${{ report.predicted_revenue }}</td>
+                {% if report.difference %}
+                    <td>${{ report.difference }}</td>
+                {% else %}
+                    <td></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

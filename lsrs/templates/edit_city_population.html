@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+View City Population
+{% endblock %}
+
+{% block content %}
+<table class="table table-dark table-hover">
+    <thead>
+    <tr>
+        <th>City Population</th>
+        <th>City</th>
+        <th>State</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ population }}</td>
+        <td>{{ city }}</td>
+        <td>{{ state }}</td>
+    </tr>
+    </tbody>
+</table>
+{% endblock %}
